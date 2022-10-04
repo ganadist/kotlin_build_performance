@@ -6,4 +6,4 @@ dependencyResolutionManagement {
     }
 }
 
-include ":java", ":kotlin"
+include ":java", ":kotlin", ":kotlin-k2"
