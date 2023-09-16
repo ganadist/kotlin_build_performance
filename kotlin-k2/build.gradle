@@ -4,8 +4,8 @@ plugins {
 
 compileKotlin {
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
-	freeCompilerArgs += "-Xuse-k2"
+	freeCompilerArgs += "-language-version"
+	freeCompilerArgs += "2.0"
     }
 }
 
