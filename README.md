@@ -7,56 +7,43 @@
 # Build Performance Result
 
 ```
-$ ./gradlew clean
+$ git clean -ffdx
 
-> Task :clean
-> Task :java:clean
-> Task :kotlin:clean
+$ ./gradlew :java:assemble --no-build-cache
 
-BUILD SUCCESSFUL in 481ms
-3 actionable tasks: 3 executed
-
-
-$ ./gradlew :java:assemble
-
-> Task :java:compileJava
 > Task :java:processResources NO-SOURCE
+> Task :java:compileJava
 > Task :java:classes
 > Task :java:jar
 > Task :java:assemble
 
-BUILD SUCCESSFUL in 3s
+BUILD SUCCESSFUL in 2s
 2 actionable tasks: 2 executed
 
 
-$ ./gradlew :kotlin:assemble
-
+$ ./gradlew :kotlin:assemble --no-build-cache
+> Task :kotlin:checkKotlinGradlePluginConfigurationErrors
 > Task :kotlin:processResources NO-SOURCE
 > Task :kotlin:compileKotlin
 > Task :kotlin:compileJava NO-SOURCE
 > Task :kotlin:classes UP-TO-DATE
 > Task :kotlin:jar
-> Task :kotlin:inspectClassesForKotlinIC
 > Task :kotlin:assemble
 
-BUILD SUCCESSFUL in 1m 22s
+BUILD SUCCESSFUL in 1m 20s
 3 actionable tasks: 3 executed
 
-$ ./gradlew :kotlin-k2:assemble
 
+$ ./gradlew :kotlin-k2:assemble --no-build-cache
+> Task :kotlin-k2:checkKotlinGradlePluginConfigurationErrors SKIPPED
 > Task :kotlin-k2:processResources NO-SOURCE
 > Task :kotlin-k2:compileKotlin
-w: ATTENTION!
- This build uses experimental K2 compiler: 
-  -Xuse-k2
-
 > Task :kotlin-k2:compileJava NO-SOURCE
 > Task :kotlin-k2:classes UP-TO-DATE
 > Task :kotlin-k2:jar
-> Task :kotlin-k2:inspectClassesForKotlinIC
 > Task :kotlin-k2:assemble
 
 BUILD SUCCESSFUL in 1m 1s
-3 actionable tasks: 3 executed
+2 actionable tasks: 2 executed
 
 ```
